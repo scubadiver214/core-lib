@@ -4,7 +4,7 @@ This project is a library containing core / shareable functionality for UI proje
 **NOTE:** Please document changes/additions to this library in the CHANGELOG.MD by date | feature.
 
 
-### OTP Core lib directory structure
+### Core lib directory structure
 ![Directory Structure](https://cdn-std.droplr.net/files/acc_699068/JD1zhP)
 
 ##### fetch-interceptors
@@ -19,11 +19,6 @@ This project is a library containing core / shareable functionality for UI proje
 
 ## Building, Publishing, Deploying to NPM Artifactory - CICD
 You can manually publish the artifact to NPM but that isn't advised, directly. After you've run npm build, the package.json file that's copied into the ./dist folder includes a version with a `$build` replacement variable used by jenkins for versioning each build. e.g. __"version": "1.0.0-$build.3"__ Therefore, you would need to manually change that to an explicit version to push an artifact.
-
-## Installing a specific version
-In order to install a specific version you will need to view the npm info of a package and install it as such: `npm i @otp/core-ui@1.0.0-2020.12.28.9.4`
-
-![Jfrog Artifactory](https://cdn-std.droplr.net/files/acc_699068/f0fnub)
 
 #### TODO
 * Continue to move shared services to this library for micro frontend consumption
