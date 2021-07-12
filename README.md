@@ -1,9 +1,6 @@
 ## Purpose
-This project is a library containing core / shareable functionality for OTP UI project(s). Core functionality for handling date time, local and session storage and utilty functions can be found inside.
+This project is a library containing core / shareable functionality for UI project(s). Core functionality for handling date time, local and session storage and utilty functions can be found inside.
 
-`npm i @OTP/CORE-UI` to install this package. 
-
-**NOTE:** *It's strongly recommmended you let Jenkins handle the building, versioning a deployment of the otp core ui package.*
 **NOTE:** Please document changes/additions to this library in the CHANGELOG.MD by date | feature.
 
 
