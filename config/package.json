@@ -1,0 +1,15 @@
+{
+  "name": "@otp/core-ui",
+  "version": "1.0.1-beta-$build",
+  "main": "otp-core-ui.js",
+  "repository": "https://dev.azure.com/tr-corp-default/OneSourceProvision/_git/OTP-CORE-UI",
+  "license": "Thomson Reuters",
+  "publishConfig": {
+    "registry": "https://tr1.jfrog.io/tr1/api/npm/npm-local/"
+  },
+  "peerDependencies": {
+    "rxjs": "^6.5.4",
+    "ts-jest": "^26.4.4",
+    "typescript": "~3.5.0"
+  }
+}

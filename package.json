@@ -1,0 +1,89 @@
+{
+  "name": "@otp/core-ui",
+  "version": "1.0.0",
+  "main": "otp-core-ui.js",
+  "repository": "https://dev.azure.com/tr-corp-default/OneSourceProvision/_git/OTP-CORE-UI",
+  "license": "Thomson Reuters",
+  "publishConfig": {
+    "registry": "https://tr1.jfrog.io/artifactory/nuget-local/ctt/OTP/OTP_Core/"
+  },
+  "scripts": {
+    "copy:assets": "node ./scripts/copy-assets.js",
+    "publish": "cd ./dist && npm publish",
+    "build": "npm run clean && webpack --config webpack.config.js --progress && npm run copy:assets && cd ./dist && npm pack",
+    "build:prod": "npm run clean && webpack --config webpack.production.config.js --progress && npm run copy:assets && cd ./dist && npm pack",
+    "lint": "eslint -f unix --cache --config .eslintrc.js src/**/*.ts",
+    "clean": "rimraf dist",
+    "test": "jest",
+    "tdocs": "typedoc src/index.ts",
+    "prettier": "prettier --write src/**/*.ts",
+    "test:coverage": "jest --runInBand --coverage",
+    "test:ci": "jest --coverage --runInBand --ci --reporters=jest-junit",
+    "test:watch": "jest --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": " npm run prettier && npm run lint"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 20,
+        "functions": 20,
+        "lines": 20,
+        "statements": 20
+      }
+    },
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupJest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/dist",
+      "<rootDir>/config"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "^7.14.0",
+    "husky": "^4.2.5",
+    "prettier": "^1.15.3",
+    "rxjs": "^6.6.3",
+    "typescript": "~3.5.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "^7.14.0",
+    "husky": "^4.2.5",
+    "prettier": "^1.15.3",
+    "rxjs": "^6.6.3",
+    "tslib": "^2.3.0",
+    "typescript": "~4.0.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-tsdoc": "^0.2.11",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
+    "jest-html-reporter": "^3.3.0",
+    "jest-junit": "^8.0.0",
+    "shelljs": "^0.8.3",
+    "terser-webpack-plugin": "^5.1.1",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^5.3.3",
+    "typedoc": "0.20.9",
+    "typedoc-plugin-markdown": "^3.0.11",
+    "webpack": "^5.24.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
